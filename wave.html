@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>波浪</title>
+    <style>
+        .banner1 {
+            height: 600px;
+        }
+    </style>
+</head>
+<body style="background-color: black">
+<div class="banner1"></div>
+<script src="https://cdn.bootcss.com/three.js/r68/three.min.js"></script>
+<script>
+    var banner1 = document.getElementsByClassName("banner1")[0];
+
+    function createAnimate(e) {
+        var n, i, a, t, r, o, s = 30, d = 120, w = 25, c = 0;
+        window.innerWidth;
+
+        function l() {
+            window.innerWidth / 2, 300, i.aspect = window.innerWidth / 600, i.updateProjectionMatrix(), t.setSize(window.innerWidth, 600)
+        }
+
+        !function () {
+            (n = document.createElement("div")) && (n.className += n.className ? " waves" : "waves");
+            (i = new THREE.PerspectiveCamera(120, window.innerWidth / 600, 1, 1e4)).position.y = 150, i.position.z = -20, i.rotation.x = .35, a = new THREE.Scene, r = new Array;
+            for (var c = 2 * Math.PI, m = new THREE.SpriteCanvasMaterial({
+                color: 'white', program: function (e) {
+                    e.beginPath(), e.arc(0, 0, .104, 0, c, !0), e.fill()
+                }
+            }), p = 0, h = 0; h < d; h++) for (var E = 0; E < w; E++) (o = r[p++] = new THREE.Sprite(m)).position.x = h * s - d * s / 2, o.position.z = E * s - (w * s - 15), a.add(o);
+            (t = new THREE.CanvasRenderer).setSize(window.innerWidth, 600), t.setClearColor('blue', 0), n.appendChild(t.domElement), e.appendChild(n), window.addEventListener("resize", l, !1)
+        }(), function e() {
+            requestAnimationFrame(e);
+            !function () {
+                for (var e = 0, n = 0; n < d; n++) for (var s = 0; s < w; s++) (o = r[e++]).position.y = 20 * Math.sin(.5 * (n + c)) + 20 * Math.sin(.5 * (s + c)), o.scale.x = o.scale.y = 4 * (Math.sin(.3 * (n + c)) + 2) + 4 * (Math.sin(.5 * (s + c)) + 1);
+                t.render(a, i), c += .1
+            }()
+        }()
+    }
+
+    createAnimate(banner1);
+</script>
+</body>
+</html>

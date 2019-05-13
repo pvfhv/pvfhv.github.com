@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preserve-3d</title>
+    <style>
+        .stage {
+            width: 900px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 100px 50px;
+            position: relative;
+            perspective: 1000px;
+            border: 1px solid red;
+        }
+        .container{
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            transform: rotateX(-10deg) rotateY(30deg);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+        .stage > div > div{
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+        #div1{
+            transform: rotateY(36deg) translateZ(154px);
+            background: red;
+        }
+        #div2{
+            transform: rotateY(72deg) translateZ(154px);
+            background: yellow;
+        }
+        #div3{
+            transform: rotateY(108deg) translateZ(154px);
+            background: pink;
+        }
+        #div4{
+            transform: rotateY(144deg) translateZ(154px);
+            background: blue;
+        }
+        #div5{
+            transform: rotateY(180deg) translateZ(154px);
+            background: purple;
+        }
+        #div6{
+            transform: rotateY(216deg) translateZ(154px);
+            background: brown;
+        }
+        #div7{
+            transform: rotateY(252deg) translateZ(154px);
+            background: cyan;
+        }
+        #div8{
+            transform: rotateY(288deg) translateZ(154px);
+            background: darkmagenta;
+        }
+        #div9{
+            transform: rotateY(324deg) translateZ(154px);
+            background: darkcyan;
+        }
+        #div10{
+            transform: rotateY(360deg) translateZ(154px);
+            background: fuchsia;
+        }
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div class="container">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+        <div id="div6"></div>
+        <div id="div7"></div>
+        <div id="div8"></div>
+        <div id="div9"></div>
+        <div id="div10"></div>
+    </div>
+</div>
+</body>
+</html>

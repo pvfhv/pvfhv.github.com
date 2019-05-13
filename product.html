@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<button id="btn1">获得产品</button>
+<script>
+    $('#btn1').click(function () {
+        $.get('http://localhost:8765/api/getProductVerInfo', { productName: 'scopa', version: '22222'}, function (res) {
+            console.log(res)
+        })
+    })
+</script>
+</body>
+</html>

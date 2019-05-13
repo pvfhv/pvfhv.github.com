@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <title>contenteditable</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        .im-message-area{
+            width:98%;
+            padding:2px;
+            height:75px;
+            border:#000 solid 1px;
+            background:#fff;
+            font:12px/20px arial,"5b8b4f53";
+            word-wrap:break-word;
+            overflow-y:auto;
+            line-height:1;
+        }
+        .ul{display:none;}
+        .ul li{
+            background-color:#CCC;
+            width:50px;
+        }
+    </style>
+
+</head>
+<body>
+<div contenteditable="true" id="im_message_area" class="im-message-area"><br></div>
+<a href="javascript:void(0)" id="button">按钮</a>
+<ul class="ul">
+    <li>(笑)</li>
+    <li>(哭)</li>
+    <li>(乐)</li>
+</ul>
+<script>
+    var cursor = 0; // 光标位置
+    document.onselectionchange = function () {
+        var range = document.selection.createRange();
+        var srcele = range.parentElement();//获取到当前元素
+        var copy = document.body.createTextRange();
+        copy.moveToElementText(srcele);
+        for (cursor = 0; copy.compareEndPoints("StartToStart", range) < 0; cursor++) {
+            copy.moveStart("character", 1);//改变光标位置，实际上我们是在记录cursor的数量.
+        }
+    }
+</script>
+</body>
+</html>

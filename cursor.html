@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标样式</title>
+    <style>
+        html{
+            cursor: none!important;
+        }
+        .hide{
+            display: none;
+        }
+        .cursor{
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="hide cursor"><img src="images/timg.jpeg"></div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    var autoHideCursorTimer = null
+    var $cursor = $('.cursor')
+    $(document).on('mousemove', function (ev) {
+        clearInterval(autoHideCursorTimer)
+        $cursor.removeClass('hide').css({
+            left: ev.clientX,
+            top: ev.clientY
+        })
+
+        autoHideCursorTimer = setInterval(function () {
+            $cursor.addClass('hide')
+        }, 1000)
+    })
+
+</script>
+</body>
+</html>
