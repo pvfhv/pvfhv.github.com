@@ -4,39 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .parent{
-            width: 500px;
-            height: 500px;
-            border: 1px solid red;
+        .box{
             display: flex;
+            height: 100vh;
         }
 
-        .ch{
-            height: 100%;
-            flex: 1;
-            border: 1px solid green;
-            display: flex;
+        .box > div:nth-child(1){
+            width: 200px;
+            background: red;
         }
 
-        .ch > div{
-            height: 100%;
-            border: 10px solid purple;
+        .box > div:nth-child(2){
             flex: 1;
+            background: yellow;
+        }
+
+        .box > div:nth-child(3){
+            width: 300px;
+            background: green;
         }
     </style>
 </head>
 <body>
-<div class="parent">
-    <div class="ch">
-        <div>abc</div>
-        <div>abc2</div>
-    </div>
-    <div class="ch">
-        <div>efg</div>
-    </div>
-    <div class="ch">
-        <div>hij</div>
-    </div>
+<div class="box">
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
 </div>
 </body>
 </html>
