@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>faker</title>
+    <!-- Since v6 only type=module is supported -->
+    <script type="module">
+        import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
+        faker.locale = 'zh_CN'
+
+        // Caitlyn Kerluke
+        const randomName = faker.name.fullName();
+
+        // Rusty@arne.info
+        const randomEmail = faker.internet.email();
+
+        // phone
+        const phone = faker.phone.number('13#########')
+        const name = faker.name.lastName() + faker.name.firstName()
+        const uuid = faker.datatype.uuid()
+
+        console.log(phone, name)
+        console.log(uuid)
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
