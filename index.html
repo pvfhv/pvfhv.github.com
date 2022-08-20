@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试服务</title>
+    <title>一往无前——个人主页</title>
     <style>
         .div2{
             width: 200px;
@@ -29,18 +29,7 @@
 <div class="div2">
     <embed src="http://172.17.1.222:8080/static/images/graphicon/entity-graphicon-account.svg" /></div>
 <script>
-    setInterval(function () {
-        document.getElementById('div1').innerText = Date.now()
-    },1000)
 
-    function getServerTime() {
-        return Date.now()
-    }
-
-    window.addEventListener('message',function(event){
-        console.log('衡石服务收到消息')
-        console.log(event)
-    })
 </script>
 </body>
 </html>
